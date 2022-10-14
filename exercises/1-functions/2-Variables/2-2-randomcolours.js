@@ -1,24 +1,36 @@
 "use strict";
+let context;        // om je canvas aan te maken, staat altijd van boven, voor de functies 
 
-let canvas = document.querySelector('canvas');
-canvas.width = window.innerWidth; 
-canvas.height = window.innerHeight;
-let context = canvas.getContext('2d');
+//hieronder worden alle functies aangeroepen 
+setup();            //setup van je canvas 
+drawRect();
 
-let width = context.canvas.width;
-let height= context.canvas.height;
 
-let size = 400;
-let randomX = Math.floor(Math.random()*(width-size));
-let randomY = Math.floor(Math.random()*(height -size));
+function setup() {
 
-let r = Math.floor(Math.random() * 255);  //250= max. kleuren van rgb 
-let g = Math.floor(Math.random() * 255);
-let b = Math.floor(Math.random() * 255);
-console.log(r,g,b);
-let color ="rgb(" + r +", " + g + "," + b +")";
+    let canvas = document.querySelector("canvas");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    context = canvas.getContext("2d");      //Let = altijd een variabele (constante variabele)  
+}
 
-context.fillStyle = color;
+function drawRect() {           //Coördinaten --> positie van je vierkant 
+    drawSquare(0, 500);
+    drawSquare(50, 400);
+    drawSquare(100, 300);
+    drawSquare(150, 200);
+    drawSquare(200, 100);
+ 
+}
 
-context.fillRect(randomX,randomY, size,size);
-context.fill();
+function drawSquare(pos, size) {  //drawSquare wordt opgeroepen in drawRect --> lokaal, niet globaal --> kleuren van de squares 
+                    //(parameters)
+    let red = Math.random() * 255;
+    let green = Math.random() * 255;
+    let blue = Math.random() * 255;
+
+    context.fillStyle = "rgb(" + red + "," + green + "," + blue + ")";
+    context.fillRect(100 + pos, 100 + pos, size, size);  //size,size = canvas width & height    
+
+}
+
