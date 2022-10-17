@@ -31,5 +31,4 @@ function drawSquare(pos, size) {  //drawSquare wordt opgeroepen in drawRect --> 
 
     context.fillStyle = "rgb(" + red + "," + green + "," + blue + ")";
     context.fillRect(100 + pos, 100 + pos, size, size);  //size,size = canvas width & height    
-
 }
