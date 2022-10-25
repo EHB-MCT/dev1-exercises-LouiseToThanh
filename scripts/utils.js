@@ -17,7 +17,15 @@ export function drawLines(x1, y1, x2, y2 ) {   //exp naar ander module, zonder '
     context.stroke();
 }
 
-export function rgb(r,g,b) {
+/**export function rgb(r,g,b) {
     let rgb="rgb("+r+","+g+","+b+")";
     return rgb
+}
+*/
+
+export function fillEllipse(x,y,rX,rY) {
+    context.beginPath();
+    context.ellipse(x,y,rX,rY,0,0,Math.PI*2);
+    context.strokeStyle="white";
+    context.stroke();
 }
