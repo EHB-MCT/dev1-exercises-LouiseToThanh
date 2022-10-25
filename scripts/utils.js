@@ -26,6 +26,12 @@ export function drawLines(x1, y1, x2, y2 ) {   //exp naar ander module, zonder '
 export function fillEllipse(x,y,rX,rY) {
     context.beginPath();
     context.ellipse(x,y,rX,rY,0,0,Math.PI*2);
-    context.strokeStyle="white";
+    context.fillEllipse();
+}
+
+export function strokeRect(x,y,width,height){
+    context.beginPath();
+    context.lineWidth= 2;
+    context.rect(x,y,width,height);
     context.stroke();
 }
