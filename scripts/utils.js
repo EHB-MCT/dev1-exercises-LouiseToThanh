@@ -10,10 +10,14 @@ import context from "./context.js";    //we gebruiken var. gebruiken die we impo
  * @param {*} y1 y-coordinate of starting point 
  * @param {*} y2 y coordinate of ending point 
  */
-export function drawLines(x1, y1, x2, y2) {   //exp naar ander module, zonder 'default'
+export function drawLines(x1, y1, x2, y2 ) {   //exp naar ander module, zonder 'default'
     context.beginPath();
-    context.moveTo(x1,y1);
-    context.lineTo(x2,y2);
+    context.moveTo(x2,y2);
+    context.lineTo(x1,y1);
     context.stroke();
+}
 
+export function rgb(r,g,b) {
+    let rgb="rgb("+r+","+g+","+b+")";
+    return rgb
 }
